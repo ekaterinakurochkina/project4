@@ -40,3 +40,4 @@ list_dict = [
     {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
 print(sort_by_date(list_dict))
+# комментарий для фиксации изменений
