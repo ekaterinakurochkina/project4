@@ -1,4 +1,4 @@
-import masks
+from src import masks
 from typing import Union
 
 
