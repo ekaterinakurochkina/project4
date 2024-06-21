@@ -1,7 +1,8 @@
-import masks  # type: ignore
+import masks
+from typing import Union
 
 
-def mask_account_card(account_card: str) -> str | None:
+def mask_account_card(account_card: str) -> Union[str, None]:
     """Функция маскировки номера карты или номера счета"""
     numeral = account_card[-20:]
     if numeral.isdigit():
@@ -20,7 +21,7 @@ result_3 = print(mask_account_card(account_card_1))
 result_4 = print(mask_account_card(account_card_2))
 
 
-def get_data(data: str) -> str | None:
+def get_data(data: str) -> Union[str, None]:
     """Функция преобразования даты"""
     return f"{data[8:10]}.{data[5:7]}.{data[0:4]}"
 

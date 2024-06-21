@@ -2,7 +2,7 @@ import pytest
 
 from src.masks import get_mask_account, get_mask_card_number
 
-"""Тестирование раздела masks с использованием фикстуры"""
+# Тестирование раздела masks с использованием фикстуры
 
 
 @pytest.fixture

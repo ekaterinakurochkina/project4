@@ -18,7 +18,7 @@ list_dict = [
     {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
 key_dict = "EXECUTED"
-# key_dict = 'CANCELED'
+key_dict = "CANCELED"
 print(filter_by_state(list_dict, key_dict))
 
 
@@ -40,4 +40,3 @@ list_dict = [
     {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
 print(sort_by_date(list_dict))
-

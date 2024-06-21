@@ -2,7 +2,7 @@ import pytest
 
 from src.processing import filter_by_state
 
-"""тестирование при помощи параметризации"""
+# тестирование при помощи параметризации
 
 
 @pytest.mark.parametrize(
