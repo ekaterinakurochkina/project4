@@ -1,5 +1,6 @@
-from src import masks
 from typing import Union
+
+from src import masks
 
 
 def mask_account_card(account_card: str) -> Union[str, None]:
