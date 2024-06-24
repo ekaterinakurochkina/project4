@@ -1,5 +1,9 @@
-import masks
-def mask_account_card(account_card:str) -> str| None:
+from typing import Union
+
+from src import masks
+
+
+def mask_account_card(account_card: str) -> Union[str, None]:
     """Функция маскировки номера карты или номера счета"""
     numeral = account_card[-20:]
     if numeral.isdigit():
@@ -12,16 +16,16 @@ def mask_account_card(account_card:str) -> str| None:
 
 account_card_1 = "Maestro1234567812345678"
 account_card_2 = "Счет12345678901234567890"
+
+
 result_3 = print(mask_account_card(account_card_1))
 result_4 = print(mask_account_card(account_card_2))
 
 
-def get_data(data:str) -> str | None:
+def get_data(data: str) -> Union[str, None]:
     """Функция преобразования даты"""
     return f"{data[8:10]}.{data[5:7]}.{data[0:4]}"
 
 
 data = "2018-07-11T02:26:18.671407"
-
-
 result_5 = print(get_data(data))
