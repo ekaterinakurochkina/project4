@@ -1,6 +1,5 @@
 import pytest
 
-
 from src.widget import get_data, mask_account_card
 
 
