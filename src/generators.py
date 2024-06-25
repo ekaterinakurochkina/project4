@@ -98,5 +98,5 @@ def card_number_generator(start, end):
 #     print(next(descriptions))
 
 
-for card_number in card_number_generator(1, 1):
-        print(card_number)
+# for card_number in card_number_generator(1, 1):
+#         print(card_number)

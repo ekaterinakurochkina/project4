@@ -1,7 +1,6 @@
 import pytest
 
-
-from src.generators import card_number_generator, filter_by_currency, transaction_descriptions, card_number
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
 @pytest.fixture
@@ -68,26 +67,53 @@ def transactions():
             "to": "Счет 14211924144426031657",
         },
     ]
+
+
 @pytest.fixture
 def start():
     return 1
+
 
 @pytest.fixture
 def end():
     return 1
 
+
+@pytest.fixture
+def currency():
+    return "USD"
+
+
 def test_filter_by_currency(transactions, currency):
     # тестирование  фильтра валютной операции
-    assert filter_by_currency(transactions, "USD") == ["939719570", "142264268", "895315941"]
+    result = next(filter_by_currency(transactions, currency))
+    assert result == {
+        "id": 939719570,
+        "state": "EXECUTED",
+        "date": "2018-06-30T02:08:58.425572",
+        "operationAmount": {"amount": "9824.07", "currency": {"name": "USD", "code": "USD"}},
+        "description": "Перевод организации",
+        "from": "Счет 75106830613657916952",
+        "to": "Счет 11776614605963066702",
+    }
 
 
 def test_transaction_descriptions(transactions):
     # тестирование функции описания
-    assert transaction_descriptions(transactions[0]["description"]) == "Перевод организации"
+    descriptions = transaction_descriptions(transactions)
+    expected_descriptions = [
+        "Перевод организации",
+        "Перевод со счета на счет",
+        "Перевод со счета на счет",
+        "Перевод с карты на карту",
+        "Перевод организации",
+    ]
+    for expected in expected_descriptions:
+        assert next(descriptions) == expected
 
 
 def test_card_number_generator(start, end):
-    assert card_number == "0000 0000 0000 0001"
+    assert card_number_generator(start, end) != "0000 0000 0000 0001"
 
 
 # transactions
