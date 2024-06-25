@@ -63,37 +63,40 @@ transactions = [
 
 
 def filter_by_currency(transactions, currency):
-    # функция, которая принимает список словарей с банковскими операциями
-    # и возвращает итератор, который выдает по очереди операции, в которых указана заданная валюта
+    """функция-генератор, которая принимает список словарей с банковскими операциями
+    и возвращает итератор, который выдает по очереди операции, в которых указана заданная валюта"""
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
             yield transaction
 
 
-usd_transactions = filter_by_currency(transactions, "USD")
-
-for _ in range(3):
-    print(next(usd_transactions)["id"])
-
-
 def transaction_descriptions(transactions):
-    # генератор, который принимает список словарей и возвращает описание каждой операции по очереди
+    """ генератор, который принимает список словарей и возвращает описание каждой операции по очереди """
     for transaction in transactions:
         yield transaction["description"]
 
 
-descriptions = transaction_descriptions(transactions)
-
-for _ in range(5):
-    print(next(descriptions))
-
 def card_number_generator(start, end):
-    # генератор номеров банковских карт 9999 9999 9999 9999
-    for i in range (start, end+1):
+    """ генератор номеров банковских карт """
+    for i in range(start, end + 1):
         empty_str = "0000000000000000"
         str_sum = empty_str + str(i)
         card_number = f"{str_sum[-16:-12]} {str_sum[-12:-8]} {str_sum[-8:-4]} {str_sum[-4:-1]}{str_sum[-1]}"
         yield card_number
 
-for card_number in card_number_generator(1, 5):
+
+# проверка работы кода:
+#
+# usd_transactions = filter_by_currency(transactions, "USD")
+#
+# for _ in range(3):
+#     print(next(usd_transactions)["id"])
+
+# descriptions = transaction_descriptions(transactions)
+#
+# for _ in range(5):
+#     print(next(descriptions))
+
+
+for card_number in card_number_generator(1, 1):
         print(card_number)
