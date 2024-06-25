@@ -71,13 +71,13 @@ def filter_by_currency(transactions, currency):
 
 
 def transaction_descriptions(transactions):
-    """ генератор, который принимает список словарей и возвращает описание каждой операции по очереди """
+    """генератор, который принимает список словарей и возвращает описание каждой операции по очереди"""
     for transaction in transactions:
         yield transaction["description"]
 
 
 def card_number_generator(start, end):
-    """ генератор номеров банковских карт """
+    """генератор номеров банковских карт"""
     for i in range(start, end + 1):
         empty_str = "0000000000000000"
         str_sum = empty_str + str(i)
