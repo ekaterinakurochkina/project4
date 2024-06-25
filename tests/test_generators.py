@@ -113,7 +113,8 @@ def test_transaction_descriptions(transactions):
 
 
 def test_card_number_generator(start, end):
-    assert card_number_generator(start, end) != "0000 0000 0000 0001"
+    number = next(card_number_generator(start, end))
+    assert number == "0000 0000 0000 0001"
 
 
 # transactions
