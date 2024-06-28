@@ -12,13 +12,13 @@ def logging(filename=None):
                 result = func(*args, **kwargs)
                 if filename != None:
                     with open(filename, "a") as mylog:
-                        mylog.write(f"{func, __name__} ok\n")
+                        mylog.write(f"{func. __name__} ok\n")
                 elif filename == None:
                     print(f"{func, __name__} ok")
                 return result
             except Exception as e:
                 with open(filename, "a") as mylog:
-                    (mylog.write(f"{func,__name__} error:{e}. Inputs: {args}, {kwargs}\n"))
+                    (mylog.write(f"{func.__name__} error:{e}. Inputs: {args}, {kwargs}\n"))
                 raise e
 
         return wrapper
