@@ -14,10 +14,8 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 
 
-def transaction_amount(transactions: Dict) -> float | Any:
+def transaction_amount(transaction: Dict) -> float | Any:
     """функция, которая принимает транзакцию и возвращает сумму транзакции"""
-    transactions = src.utils.get_transactions(Path(ROOT_PATH, "../data/operations.json"))
-    transaction = transactions[1]
     currency = transaction["operationAmount"]["currency"]["code"]
     amount = transaction["operationAmount"]["amount"]
     url = f"https://api.apilayer.com/exchangerates_data/convert?to={"RUB"}&from={currency}&amount={amount}"
@@ -26,5 +24,4 @@ def transaction_amount(transactions: Dict) -> float | Any:
     result: Any = response.json()
     return result["result"]
 
-
-print(transaction_amount(get_transactions))
+# transactions = src.utils.get_transactions(Path(ROOT_PATH, "../data/operations.json"))
