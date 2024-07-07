@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-# from mypyc.ir.ops import Float
 
 import src.utils
 from src.сonfig import ROOT_PATH

@@ -1,5 +1,4 @@
 from unittest.mock import patch
-import requests
 from src.external_api import transaction_amount
 
 
