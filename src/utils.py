@@ -1,10 +1,10 @@
-from pathlib import Path
-from src.сonfig import ROOT_PATH
 from typing import List
 import json
 import logging
-
-
+from pathlib import Path
+import sys
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+from src.сonfig  import ROOT_PATH
 logger = logging.getLogger("utils")
 logger.setLevel(logging.INFO)
 file_handler = logging.FileHandler("logs/utils.log", "w")
@@ -34,5 +34,5 @@ def get_transactions(path_to_file: Path) -> List:
 path_to_file = Path(ROOT_PATH, "../data/operations.json")
 transactions = get_transactions(path_to_file)
 
-# print(get_transactions(Path(ROOT_PATH, "../data/operations.json")))
-# print(type(get_transactions(Path(ROOT_PATH, "../data/operations.json"))))
+print(get_transactions(Path(ROOT_PATH, "../data/operations.json")))
+print(type(get_transactions(Path(ROOT_PATH, "../data/operations.json"))))
