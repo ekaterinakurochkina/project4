@@ -20,16 +20,14 @@ def test_read_csv(mock_reader):
 
   result = read_csv(path_to_file)
   expected_result = [
-    {
-      "id": "650703",
-      "state": "EXECUTED",
-      "date": "2023-09-05T11:30:32Z",
-      "amount": "16210",
-      "currency_name": "SoL",
-      "currency_code": "PEN",
-      "from": "Счет 58803664651298323391",
-      "to": "Счет 39746506635466619397",
-      "description": "Перевод организации"
-    }
+  {'date': '2023-09-05T11:30:32Z',
+    'description': 'Перевод организации',
+    'from': 'Счет 58803664651298323391',
+    'id': '650703',
+    'operationAmount': {'amount': '16210',
+                        'currency': {'code': 'PEN', 'name': 'SoL'}},
+    'state': 'EXECUTED',
+    'to': 'Счет 39746506635466619397'
+  }
   ]
   assert result == expected_result
