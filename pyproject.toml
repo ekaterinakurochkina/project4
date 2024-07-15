@@ -10,6 +10,9 @@ python = "^3.12"
 masks = "^0.1.3"
 requests = "^2.32.3"
 python-dotenv = "^1.0.1"
+pandas = "^2.2.2"
+openpyxl = "^3.1.5"
+row = "^0.1.0.dev3"
 
 
 [tool.poetry.group.lint.dependencies]
