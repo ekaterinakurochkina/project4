@@ -1,0 +1,5 @@
+(<function my_function at 0x10fbcdd00>, 'src.decorators') ok
+(<function my_function at 0x10fbcdd00>, 'src.decorators') ok
+my_function ok
+my_function ok
+my_function ok

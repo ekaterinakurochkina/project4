@@ -1,0 +1,15 @@
+(<function my_function at 0x104547b00>, 'src.decorators') ok
+(<function my_function at 0x10e843880>, 'src.decorators') ok
+(<function my_function at 0x10c357880>, 'src.decorators') ok
+(<function my_function at 0x10c357880>, 'src.decorators') ok
+(<function my_function at 0x10e9db880>, 'src.decorators') ok
+(<function my_function at 0x10e9db880>, 'src.decorators') ok
+(<function my_function at 0x1061df880>, 'src.decorators') ok
+(<function my_function at 0x1061df880>, 'src.decorators') ok
+(<function my_function at 0x11014ba60>, 'src.decorators') ok
+(<function my_function at 0x11014ba60>, 'src.decorators') ok
+(<function my_function at 0x103b0fa60>, 'src.decorators') ok
+(<function my_function at 0x103b0fa60>, 'src.decorators') ok
+my_function ok
+my_function ok
+my_function ok
