@@ -3,17 +3,19 @@ from pathlib import Path
 import pandas as pd
 import sys
 import csv
+
 # from pandas import DataFrame
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from src.сonfig  import ROOT_PATH
+from src.сonfig import ROOT_PATH
+
 
 def read_excel(path_to_file: Path) -> list:
     """Функция чтения транзакций из excel-файла"""
     with open(path_to_file, "r", encoding="utf-8") as excel_file:
         try:
             df = pd.read_excel(path_to_file)
-            result =[]
+            result = []
             rows_len = len(df)  # Получение количества строк в DataFrame
             for i in range(0, 1):
                 row_dict = {
@@ -24,12 +26,12 @@ def read_excel(path_to_file: Path) -> list:
                         "currency": {
                             "name": df.loc[i, "currency_name"],
                             "code": df.loc[i, "currency_code"],
-                            },
                         },
-                        "description": df.loc[i, "description"],
-                        "from": df.at[i, "from"],
-                        "to": df.at[i, "to"],
-                    }
+                    },
+                    "description": df.loc[i, "description"],
+                    "from": df.at[i, "from"],
+                    "to": df.at[i, "to"],
+                }
                 result.append(row_dict)
             return result
         except Exception:
@@ -40,7 +42,6 @@ def read_excel(path_to_file: Path) -> list:
 if __name__ == "__main__":
     path_to_file = Path(ROOT_PATH, "../data/transactions_excel.xlsx")
     print(read_excel(Path(ROOT_PATH, "../data/transactions_excel.xlsx")))
-
 
 
 # Проверка кода

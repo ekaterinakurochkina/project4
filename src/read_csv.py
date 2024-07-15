@@ -2,8 +2,10 @@ from typing import List
 from pathlib import Path
 import csv
 import sys
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from src.сonfig  import ROOT_PATH
+from src.сonfig import ROOT_PATH
+
 
 def read_csv(path_to_file: Path) -> List:
     """Функция чтения транзакций из csv-файла"""
@@ -15,21 +17,21 @@ def read_csv(path_to_file: Path) -> List:
                 result = []
                 for row in reader:
                     dict_row = {
-                    "id": row[header.index("id")],
-                "state": row[header.index("state")],
-                "date": row[header.index("date")],
-                "operationAmount": {
-                    "amount": row[header.index("amount")],
-                    "currency": {
-                        "name": row[header.index("currency_name")],
-                        "code": row[header.index("currency_code")],
-                    },
-                },
-                "description": row[header.index("description")],
-                "from": row[header.index("from")],
-                "to": row[header.index("to")],
+                        "id": row[header.index("id")],
+                        "state": row[header.index("state")],
+                        "date": row[header.index("date")],
+                        "operationAmount": {
+                            "amount": row[header.index("amount")],
+                            "currency": {
+                                "name": row[header.index("currency_name")],
+                                "code": row[header.index("currency_code")],
+                            },
+                        },
+                        "description": row[header.index("description")],
+                        "from": row[header.index("from")],
+                        "to": row[header.index("to")],
                     }
-                    result.append(dict_row )
+                    result.append(dict_row)
                     return result
             except Exception:
                 print("Ошибка чтения csv")
