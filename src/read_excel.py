@@ -1,10 +1,7 @@
-from typing import List
 from pathlib import Path
 import pandas as pd
 import sys
-import csv
 
-# from pandas import DataFrame
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.сonfig import ROOT_PATH

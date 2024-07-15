@@ -1,11 +1,9 @@
-from unittest.mock import patch
 from src.read_csv import read_csv
-import os
-from unittest.mock import patch
-from typing import Dict
-from pathlib import Path
-import csv
 import sys
+from pathlib import Path
+from unittest.mock import patch
+
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.сonfig  import ROOT_PATH
 
