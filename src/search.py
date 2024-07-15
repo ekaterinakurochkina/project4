@@ -22,9 +22,9 @@ def search(transactions: list[Dict], search_data)-> list[Dict]:
 
 
 # Проверка кода
-path_to_file = Path(ROOT_PATH, "../data/operations.json")
-transactions = get_transactions(path_to_file)
-print(search(transactions, ""))
+# path_to_file = Path(ROOT_PATH, "../data/operations.json")
+# transactions = get_transactions(path_to_file)
+# print(search(transactions, ""))
 
 
 
