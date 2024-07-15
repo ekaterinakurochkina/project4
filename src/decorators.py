@@ -33,4 +33,4 @@ def my_function(x, y):
 
 
 # проверка работы функции
-print(my_function(2, 3))
+# print(my_function(2, 3))

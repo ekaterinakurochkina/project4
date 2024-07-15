@@ -8,7 +8,7 @@ import logging
 
 logger = logging.getLogger("masks")
 logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler("logs/masks.log", "w")
+file_handler = logging.FileHandler("../logs/masks.log", "w")
 file_formatted = logging.Formatter("%(asctime)s-%(name)s-%(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatted)
 logger.addHandler(file_handler)

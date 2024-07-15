@@ -1,2 +1,3 @@
 (<function my_function at 0x10e95a0c0>, '__main__') ok
 my_function ok
+my_function ok

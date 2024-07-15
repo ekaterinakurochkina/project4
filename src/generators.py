@@ -91,12 +91,12 @@ def card_number_generator(start, end):
 #
 # for _ in range(3):
 #     print(next(usd_transactions)["id"])
-
+#
 # descriptions = transaction_descriptions(transactions)
 #
 # for _ in range(5):
 #     print(next(descriptions))
-
-
+#
+#
 # for card_number in card_number_generator(1, 1):
 #         print(card_number)
