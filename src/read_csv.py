@@ -1,11 +1,11 @@
-from typing import Dict
+from typing import List
 from pathlib import Path
 import csv
 import sys
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.сonfig  import ROOT_PATH
 
-def read_csv(path_to_file: Path) -> Dict:
+def read_csv(path_to_file: Path) -> List:
     """Функция чтения транзакций из csv-файла"""
     try:
         with open(path_to_file, "r", encoding="utf-8") as csv_file:
