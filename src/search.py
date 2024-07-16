@@ -34,11 +34,12 @@ from collections import Counter
 def category_search(transactions: list[Dict])-> Dict:
     """Функция, подсчитывающая кол-во операций в каждой категории"""
     category_transactions = []
-    category = defaultdict(list)
     for transaction in transactions:
-        category = transaction["description"]
+        category = transaction.get("description")
         category_transactions.append(category)
     counted = Counter(category_transactions)
+    if counted[None]:
+        del counted[None]
     return counted
 
 # Проверка кода
