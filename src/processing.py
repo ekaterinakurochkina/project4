@@ -1,6 +1,6 @@
-from typing import Dict, List
 import re
 from collections import Counter, defaultdict
+from typing import Dict, List
 
 
 def filter_by_state(transactions: List[Dict], key_dict: str = "") -> List[Dict]:

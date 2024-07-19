@@ -1,6 +1,5 @@
 import re
-from typing import List, Any
-
+from typing import Any, List
 
 transactions = [
     {
@@ -65,10 +64,11 @@ transactions = [
     },
 ]
 
+
 def filter_currency(transactions, currency):
     """Функция фильтрации валюты"""
     filtered_currency = []
-    for transaction in  transactions:
+    for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
             filtered_currency.append(transaction)
     # print(filtered_currency)
