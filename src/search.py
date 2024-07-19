@@ -28,12 +28,12 @@ def search(transactions: list[Dict], search_data) -> list[Dict]:
 # print(search(transactions, "открытие вклада"))
 
 
-def category_search(transactions: list[Dict]) -> Dict:
+def category_search(transactions: list[Dict], category_transactions: List) -> Dict:
     """Функция, подсчитывающая кол-во операций в каждой категории"""
-    category_transactions = []
-    for transaction in transactions:
-        category = transaction.get("description")
-        category_transactions.append(category)
+    # category_transactions = []
+    # for transaction in transactions:
+    #     category = transaction.get(category_transactions)
+    #     category_transactions.append(category)
     counted = Counter(category_transactions)
     if counted[None]:
         del counted[None]
@@ -43,4 +43,5 @@ def category_search(transactions: list[Dict]) -> Dict:
 # Проверка кода
 # path_to_file = Path(ROOT_PATH, "../data/operations.json")
 # transactions = get_transactions(path_to_file)
-# print(category_search(transactions))
+# category_transactions = ["Перевод организации", "Открытие вклада", "Перевод со счета на счет", "Перевод с карты на карту"]
+# print(category_search(transactions, category_transactions))
