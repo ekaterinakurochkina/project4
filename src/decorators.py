@@ -26,11 +26,11 @@ def logging(filename=None):
     return decorator
 
 
-@logging(filename="mylog.txt")
-def my_function(x, y):
-    """Функция сложения двух чисел"""
-    return x + y
-
-
-# проверка работы функции
+# @logging(filename="mylog.txt")
+# def my_function(x, y):
+#     """Функция сложения двух чисел"""
+#     return x + y
+#
+#
+# # проверка работы функции
 # print(my_function(2, 3))

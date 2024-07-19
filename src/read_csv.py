@@ -1,7 +1,7 @@
-from typing import List
-from pathlib import Path
 import csv
 import sys
+from pathlib import Path
+from typing import List
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.сonfig import ROOT_PATH
@@ -14,7 +14,7 @@ def read_csv(path_to_file: Path) -> List:
             try:
                 reader = csv.reader(csv_file, delimiter=";")
                 header = next(reader)
-                result = []
+                transactions = []
                 for row in reader:
                     dict_row = {
                         "id": row[header.index("id")],
@@ -31,8 +31,10 @@ def read_csv(path_to_file: Path) -> List:
                         "from": row[header.index("from")],
                         "to": row[header.index("to")],
                     }
-                    result.append(dict_row)
-                    return result
+                    # print(f" csv _{dict_row}")
+                    transactions.append(dict_row)
+                # print(f" csv ___{transactions}")
+                return transactions
             except Exception:
                 print("Ошибка чтения csv")
                 return []
@@ -42,5 +44,5 @@ def read_csv(path_to_file: Path) -> List:
 
 
 # Проверка кода
-path_to_file = Path(ROOT_PATH, "../data/transactions.csv")
-print(read_csv(Path(ROOT_PATH, "../data/transactions.csv")))
+# path_to_file = Path(ROOT_PATH, "../data/transactions.csv")
+# print(read_csv(Path(ROOT_PATH, "../data/transactions.csv")))

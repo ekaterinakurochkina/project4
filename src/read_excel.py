@@ -1,7 +1,7 @@
-from pathlib import Path
-import pandas as pd
 import sys
+from pathlib import Path
 
+import pandas as pd
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.сonfig import ROOT_PATH
@@ -12,12 +12,13 @@ def read_excel(path_to_file: Path) -> list:
     with open(path_to_file, "r", encoding="utf-8") as excel_file:
         try:
             df = pd.read_excel(path_to_file)
-            result = []
-            rows_len = len(df)  # Получение количества строк в DataFrame
-            for i in range(0, 1):
+            # df = my_df.astype(float)
+            transactions = []
+            for i in range(0, len(df)):
                 row_dict = {
                     "id": df.loc[i, "id"],
                     "date": df.loc[i, "date"],
+                    "state": df.loc[i, "state"],
                     "operationAmount": {
                         "amount": df.loc[i, "amount"],
                         "currency": {
@@ -26,19 +27,19 @@ def read_excel(path_to_file: Path) -> list:
                         },
                     },
                     "description": df.loc[i, "description"],
-                    "from": df.at[i, "from"],
-                    "to": df.at[i, "to"],
+                    "from": df.loc[i, "from"],
+                    "to": df.loc[i, "to"],
                 }
-                result.append(row_dict)
-            return result
+                transactions.append(row_dict)
+            return transactions
         except Exception:
             print("Ошибка чтения excel")
             return []
 
 
-if __name__ == "__main__":
-    path_to_file = Path(ROOT_PATH, "../data/transactions_excel.xlsx")
-    print(read_excel(Path(ROOT_PATH, "../data/transactions_excel.xlsx")))
+# if __name__ == "__main__":
+#     path_to_file = Path(ROOT_PATH, "../data/transactions_excel.xlsx")
+#     print(read_excel(Path(ROOT_PATH, "../data/transactions_excel.xlsx")))
 
 
 # Проверка кода

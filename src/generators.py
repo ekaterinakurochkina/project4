@@ -1,3 +1,7 @@
+import re
+from typing import List, Any
+
+
 transactions = [
     {
         "id": 939719570,
@@ -61,6 +65,15 @@ transactions = [
     },
 ]
 
+def filter_currency(transactions, currency):
+    """Функция фильтрации валюты"""
+    filtered_currency = []
+    for transaction in  transactions:
+        if transaction["operationAmount"]["currency"]["code"] == currency:
+            filtered_currency.append(transaction)
+    # print(filtered_currency)
+    return filtered_currency
+
 
 def filter_by_currency(transactions, currency):
     """функция-генератор, которая принимает список словарей с банковскими операциями
@@ -87,7 +100,8 @@ def card_number_generator(start, end):
 
 # проверка работы кода:
 #
-# usd_transactions = filter_by_currency(transactions, "USD")
+# usd_transactions = filter_currency(transactions, "RUB")
+# print(filter_currency(transactions, "RUB"))
 #
 # for _ in range(3):
 #     print(next(usd_transactions)["id"])
